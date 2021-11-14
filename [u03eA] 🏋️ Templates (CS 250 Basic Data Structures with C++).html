@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <!-- <title> [asdf] asdf (CS 200: Concepts of Programming with C++) </title> -->
+  <!-- <title> [asdf] asdf (CS 235: Object Oriented Programming with C++) </title> -->
+  <title> [u03eA] 🏋️ Templates (CS 250: Basic Data Structures with C++) </title>
+  <meta name="description" content="">
+  <meta name="author" content="Rachel Singh">
+  <link rel="icon" type="image/png" href="https://rachels-courses.gitlab.io/webpage/web-assets/favicon.png">
+
+  <!-- jquery -->
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/jquery-3.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/bootstrap.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/bootstrap.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!-- highlight.js -->
+  <link rel="stylesheet" href="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/default.css">
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- rachel's stuff -->
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/Z_UNITINFO.js"></script>
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/Z_WEEKLYINFO.js"></script>
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/Z_HEADERINFO.js"></script>
+  <link rel="stylesheet" href="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/2020_10.css">
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/header-bar.js"></script>
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/weekly-filler.js"></script>
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/utilities.js"></script>
+  <script src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/exercise-canvas-links.js"></script>
+</head>
+<body>
+    <div id="data" style="display: none;">
+        <input type="text" id="unit-key" value="Unit 3">
+        <input type="text" id="assignment-key" value="u03eA">
+        <input type="text" id="assignment-type" value="exercises">
+    </div> <!-- data -->
+    <div class="container-fluid">
+        <div id="course-links"><!-- Header links to other classes -->                                                                                                           <div class="row"> <div class="col-md-12"> <nav class="navbar navbar-expand-lg navbar-light bg-light"> <ul class="navbar-nav mr-auto">            <li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/" class="nav-link">Home</a></li><li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/cs200/" class="nav-link">CS 200</a></li><li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/cs235/" class="nav-link">CS 235</a></li><li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/cs250/" class="nav-link">CS 250</a></li><li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/ref/reference.html" class="nav-link">Quick reference</a></li><li class="nav-item"><a href="https://rachels-courses.gitlab.io/webpage/ref/review.html" class="nav-link">Resource list</a></li></ul> </nav> </div> <!-- col-md-12 --> </div> <!-- row --> <hr>                                                                                  <!-- Header links to other classes -->                                                                                                           </div> <!-- JS inserts links -->
+        <!--<h1 id="class-info"> CS 200: Concepts of Programming with C++ </h1><hr>-->
+        <!--<h1 id="class-info"> CS 235: Object Oriented Programming with C++ </h1><hr>-->
+        <h1 id="class-info">CS 250: Basic Data Structures using C++</h1><hr>
+        <div id="header-container"><div class="row header-information">                    <div class="col-md-9">                        <section class="course-information">                            <div class="row">                                <div class="col-md-4 col-sm-8">                                     <table class="section-info">                                         <tbody><tr><th>Course:</th><td id="course">CS 250: Basic Data Structures using C++</td></tr>                                         <tr><th>Semester:</th><td id="semester">Fall 2021</td></tr>                                         <tr><th>Dates:</th><td id="dates">2021-08-23 to 2021-12-13</td></tr>                                         <tr><th>Instructor:</th><td>Rachel Singh <sub>(they/them)</sub></td></tr>                                         <tr><th>Email:</th><td>rsingh13@jccc.edu</td></tr>                                         <tr><th>Discord:</th><td>RachelThePotato#0085</td></tr>                                     </tbody></table>                                </div> <!-- half col -->                                <!-- SECTION INFORMATION START -->                                <div class="col-md-8 col-sm-4 row">                                    <div class="col-md-6">                                        <div class="section-info-box info-box bg1">                                            <div class="info-box-header">                                                Section          <strong class="section">376</strong>                                            </div>                                            <div class="info-box-body bg-light">                                             <table class="section-info">                                                 <tbody><tr><th>CRN:</th><td class="crn">81842</td></tr>                                                 <tr><th>Method:</th><td class="method">Online hybrid</td></tr>                                                 <tr><th>Times:</th><td class="times">Mon, 6:00 - 8:50 pm</td></tr>                                                 <tr><th>Semester:</th><td class="semester">Fall 2021</td></tr>                                             </tbody></table>                                            </div>                                        </div>                                    </div> <!-- section -->                                </div> <!-- half col -->                                      <!-- SECTION INFORMATION END -->                            </div> <!-- row -->                        </section> <!-- course-information -->                    </div> <!-- course-information col -->                    <div class="col-md-3">                        <section class="quick-nav border border-primary bg-light">                            <div class="container-fluid" id="nav-box">                            <ul><li><a href="https://rachels-courses.gitlab.io/webpage/cs235/" id="homepage">Homepage 🏠</a></li><li><a href="https://rachels-courses.gitlab.io/webpage/cs250/syllabus.html">Syllabus 📝</a></li><li><a href="https://gitlab.com/RachelWilShaSingh/Rachels-Computer-Science-Notes/-/raw/master/LaTeX/Core%20Programming%20Concepts/Rachel's%20Core%20Programming%20Concepts%20Notes.pdf?inline=false">Core C++ book 📘</a></li><li><a href="https://gitlab.com/RachelWilShaSingh/Rachels-Computer-Science-Notes/-/raw/master/LaTeX/Data%20Structures%20-%20Multilingual/Rachel's%20Data%20Structures%20Notes.pdf?inline=false">Data Structures book 📘</a></li><li><a href="https://gitlab.com/rachels-courses/cs250-basic-data-structures-with-cpp/-/tree/main/example-code">Example code 💾</a></li><li><a href="http://catalog.jccc.edu/coursedescriptions/cs/#CS_250">Course catalog 📖</a></li><li><a href="http://canvas.jccc.edu/">Canvas <img src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/canvas-icon.png"></a></li></ul></div>                        </section> <!-- quick-nav -->                    </div> <!-- quick-nav col -->                </div> <!-- row -->                <hr></div> <!-- JS inserts header -->
+        <!-- TABS -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">       <a href="https://rachels-courses.gitlab.io/webpage/cs250/index.html" class="nav-link">View-by-week</a></li>
+            <li class="nav-item">       <a href="https://rachels-courses.gitlab.io/webpage/cs250/view-by-unit.html" class="nav-link">View-by-unit</a></li>
+            <li class="nav-item">       <a href="https://rachels-courses.gitlab.io/webpage/cs250/unit03.html" class="nav-link">Unit 3</a></li>
+            <li class="nav-item active"><a href="https://rachels-courses.gitlab.io/webpage/cs250/index.html" class="nav-link active"> <span class="insert-assignment-name">[u03eA] 🏋️ Templates</span>  </a></li>
+        </ul><br>
+
+        <div class="container-fluid exercise">
+            <!-- ## BEGIN EXERCISE CONTENT ######################################################################### -->
+            <div class="row exercise">
+                <div class="col-md-12"><h2> <span class="insert-assignment-name">[u03eA] 🏋️ Templates</span> </h2><hr></div> <!-- column --> 
+                <!-- EXERCISE INTRO -->
+                <div class="col-md-8 intro">
+                    <h3>Introduction</h3>
+                    <p>
+                      Templates are an important part of writing generalized code
+                      that can be used in many contexts. For example, you don't want to
+                      have to write a list class that only works for one data type -
+                      why not cover all data types at once? With <span class="shimmer">templates</span>!
+                    </p>
+                    <p><strong>Goals:</strong></p>
+                    <ul>
+                        <li>Practice creating templated functions</li>
+                        <li>Practice creating templates classes</li>
+                    </ul>
+                    <br><br>
+                    <div class="extraneous">
+                      <p><strong>Are you in my CS 235 AND my CS 250 class this semester?</strong></p>
+                      <p>
+                        This assignment is the same in both classes. You can copy/paste it to
+                        both your repos, or just turn in the link from one repo on Canvas
+                        to get credit in both places.
+                      </p>
+                    </div>
+                </div><!-- col-md-8 intro -->
+                <!-- QUICK JUMP -->
+                <div class="col-md-4 quick-jump">
+                    <div id="insert-assignment-info">  <div class="card assignment-info">      <div class="card-header">Assignment info</div>      <div class="card-body">          <section class="due-dates">            Due: <span class="due" id="insert-duedate">Sept 15</span>            End: <span class="end" id="insert-enddate">Sept 22</span>          </section>          <section class="canvas-links">            <img src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/canvas-icon.png"> Canvas links:             <ul id="insert-canvas-links"><li><a href="https://canvas.jccc.edu/courses/49331/assignments/966800">Section 376</a></li></ul>          </section>      </div>  </div><br></div>
+                            
+                    <div class="card"><div class="card-header">Quick jump</div><div class="card-body"><ul>
+                        <li><a href="#partD">Program requirements and design                </a></li>
+                        <li><a href="#part0">Project setup                                  </a></li>
+                        <li><a href="#part1">Templated function                             </a></li>
+                        <li><a href="#part2">Templated class                                </a></li>
+                        <li><a href="#part2">Your own templated function                    </a></li>
+                        <li><a href="#partZ">Submitting your work                           </a></li>
+                    </ul></div></div>
+                </div><!-- col-md-4 quick-jump -->
+                
+                <!-- THE REST OF THE EXERCISE -->
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="partD" href="#partD"><h3> Program requirements and design </h3></a><!--#################-->
+                  <p>For this assignment, you will need to turn in:</p>
+                  
+                  <ul>
+                    <li>All header and source files (.h/.hpp and .cpp) to the directory <code>Unit03/u03eA_Templates</code> and uploaded to GitLab.</li>
+                    <li>You <em>can</em> add your project files to your repository, though <strong><em>I</em></strong> don't require them.</li>
+                  </ul>
+<!--#########--></section><!--################################################################################################-->
+
+
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="part0" href="#part0"><h3>Project setup</h3></a><!--#####################################-->
+                    <p>
+                        Create a new project in the assignment folder.
+                        Create the following files:
+                        </p><ul>
+                          <li>u03ea.cpp - This is where main() will go</li>
+                          <li>functions.hpp (or .h) - This is where the function declarations will go.</li>
+                          <li>classes.hpp (or .h) - This is where the class declarations will go.</li>
+                        </ul>
+                    <p></p>
+                    <p>
+                      You'll want to include the following libraries in any files where these keywords are:
+                      </p><table class="table">
+                        <tbody><tr><th>Library</th><th>Features</th></tr>
+                        <tr><td>iostream</td><td>cout</td></tr>
+                        <tr><td>iomanip</td><td>setw</td></tr>
+                        <tr><td>string</td><td>string</td></tr>
+                        <tr><td>fstream</td><td>ofstream</td></tr>
+                      </tbody></table>
+                    <p></p>
+<!--#########--></section><!--################################################################################################-->
+
+
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="part1" href="#part1"><h3> Templated function </h3></a><!--#############-->
+                  <p>
+                    First, we're going to create a templated function. We'll create
+                    a function that takes a parameter and display it in a column.
+                    It will take an optional second parameter to define the width of the column.
+                  </p>
+                  
+                  <p><strong>This function will go in your functions.hpp file.</strong></p>
+                  
+                  <div class="extraneous">
+                    <p><strong>Don't forget the file guards!</strong></p>
+                    <p>Remember that all header files (.h or .hpp files) need to have file guards
+                    to prevent duplicate code imports. The file guards look like this:</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _YOUR_LABEL</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _YOUR_LABEL</span>
+
+<span class="hljs-comment">// Code goes here</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></code></pre>
+
+                    <p>The label can be anything so long as each header file has its own unique label.
+                    Usually, I name it something related to the filename, like <code>_FUNCTIONS_HPP</code>.</p>
+                  </div>
+                  
+                  <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          To create our templated function, we start with specifying that it's a template
+                          and an alias for the datatype (usually just "T").
+                        </p>
+                        <p>
+                          Then, in the parameter list, for any parameters that we want to
+                          allow <em>any data type</em>, we use "T". For parameters
+                          that always need to be the same data type, we can just 
+                          write it as normal.
+                        </p>
+                        
+                        <p>
+                          Within this function, we display the <code>col</code>
+                          item passed in, using <code>left</code> and <code>setw</code>
+                          from iomanip in order to create a column of some width
+                          (the <code>colWidth</code> passed in).
+                        </p>
+                        
+                      </div>
+                      <div class="col-md-6">
+                        <p>This all goes in the header file <code>functions.hpp</code>:</p>
+                        <pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DisplayColumn</span><span class="hljs-params">( T col, <span class="hljs-keyword">int</span> colWidth = <span class="hljs-number">20</span> )</span>
+</span>{
+    <span class="hljs-built_in">cout</span> &lt;&lt; left &lt;&lt; setw( colWidth ) &lt;&lt; col;
+}</code></pre>
+                      </div>
+                  </div>
+                  
+                  <div class="extraneous">
+                    <p><strong>Default parameters:</strong></p>
+                    <p>
+                      The second parameter here has a default value assigned to it:
+                      <code>int colWidth = 20</code>. What this means is that,
+                      if somebody calls the function like this:
+                      </p><pre><code class="hljs less"><span class="hljs-selector-tag">DisplayColumn</span>( myVariable );</code></pre>
+                      The code will still run! The parameter <code>colWidth</code>
+                      will have a value of 20 if nothing is specified.
+                      <br><br>
+                      Of course, you could also call the function and explicitly
+                      set that parameter's value via an argument:
+                      <pre><code class="hljs apache"><span class="hljs-attribute">DisplayColumn</span>( myVariable, <span class="hljs-number">10</span> );</code></pre>
+                      Both of these calls will work!
+                    <p></p>
+                  </div>
+                  
+                  
+                  <h4>Calling the function from main()</h4>
+                  
+                  <p>
+                    In your <code>main()</code> fucntion,
+                    no special symbols or keywords are required to call
+                    this templated function. We can pass in any data type
+                    as the first argument, and we can either leave off the second
+                    <br><br>
+                    argument or supply an integer to specify how wide the column should be.
+                    For example:
+                  </p>
+                  
+                    <div class="row">
+                        <div class="col-md-6">
+<pre><code class="hljs cpp"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Column width 20:"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+DisplayColumn( <span class="hljs-string">"NAME"</span> );
+DisplayColumn( <span class="hljs-string">"PRICE"</span> );
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Column width 10:"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+DisplayColumn( <span class="hljs-string">"NAME"</span>, <span class="hljs-number">10</span> );
+DisplayColumn( <span class="hljs-string">"PRICE"</span>, <span class="hljs-number">10</span> );
+</code></pre>
+
+                        </div>
+                        <div class="col-md-6">
+<pre class="program-output">Column width 20:
+NAME                PRICE               
+
+Column width 10:
+NAME      PRICE     
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="error">
+                      <p><strong>I have build errors??</strong></p>
+                      <p>
+                        Look for these common errors:
+                      </p>
+                      <ul>
+                        <li>Did you use <code>#include "functions.hpp"</code> at the top of your source file that has main()?</li>
+                        <li>Don't forget your file guards in header (.h/.hpp) files!</li>
+                        <li>Never #include a .cpp file!</li>
+                      </ul>
+                    </div>
+<!--#########--></section><!--################################################################################################-->
+
+
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="part2" href="#part2"><h3> Templated class </h3></a><!--#############-->
+                  <p>
+                    Templated classes can be useful for creating storage for any data type.
+                    For this example, we will create a class that wraps a basic fixed-length array,
+                    but with a templated data type. This function will also need a function to
+                    <strong>add new elements to the array</strong>
+                    and to <strong>retrieve a value from the array at some index</strong>.
+                  </p>
+                  <p>
+                    When creating a templated class, the class declaration and class' method definitions all
+                    need to go into the header file (whereas normally, we'd put declarations in the header
+                    and definitions in the source).
+                    <a href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl">This is because C++ is old and weird.</a>
+                    There are ways around this, but I think it's clearer to just put it all in the header.
+                  </p>
+                  
+                  <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          Within <code>classes.hpp</code>, make sure to write the
+                          <a href="https://rachels-courses.gitlab.io/webpage/ref/reference.html#fileguard">file guard</a>.
+                          Then, write out the class declaration. The only thing that
+                          will differ from a normal class declaration is:
+                          </p><ul>
+                            <li>You will put <code>template &lt;typename T&gt;</code>
+                              <em>before</em> the <code>class Storage</code> line</li>
+                            <li>
+                              The array that stores the data (of any data type) should have the data type "T".
+                            </li>
+                            <li>
+                              Any parameters that take in any data type, and any return types that return any data type,
+                              should use "T". In this case, the Add function takes in a new element for the array,
+                              and the Get function returns an item from the array.
+                            </li>
+                          </ul>
+                        <p></p>
+                        
+                            
+                        <div class="hint-box">
+                            <section class="click-to-expand">Can I see how the class should look?</section>
+                            <section class="hint-contents">
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _CLASSES_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _CLASSES_HPP</span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Storage</span>
+{</span>
+    <span class="hljs-keyword">public</span>:
+    Storage()
+        : ARRAY_SIZE( <span class="hljs-number">20</span> ) <span class="hljs-comment">// initialize the const int</span>
+    {
+      <span class="hljs-comment">// add code</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Add</span><span class="hljs-params">( T newItem )</span>
+    </span>{
+      <span class="hljs-comment">// add code</span>
+    }
+
+    <span class="hljs-function">T <span class="hljs-title">Get</span><span class="hljs-params">( <span class="hljs-keyword">int</span> index )</span> <span class="hljs-keyword">const</span>
+    </span>{
+      <span class="hljs-keyword">return</span> m_arr[<span class="hljs-number">0</span>]; <span class="hljs-comment">// replace me</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Size</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span>
+    </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>; <span class="hljs-comment">// replace me</span>
+    }
+
+    <span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> ARRAY_SIZE;
+    <span class="hljs-keyword">int</span> m_itemCount;
+    T m_arr[<span class="hljs-number">20</span>];
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+                            </section>
+                        </div>
+                        
+                          
+                      </div>
+                      <div class="col-md-6">
+                        <table class="uml">
+                          <tbody><tr class="border-bottom"><th>Storage</th></tr>
+                          <tr><td>- m_arr[20] : T</td></tr>
+                          <tr><td>- m_itemCount : int</td></tr>
+                          <tr class="border-bottom"><td>- ARRAY_SIZE : const int</td></tr>
+                          <tr><td>+ Storage()</td></tr>
+                          <tr><td>+ Add( newItem : T ) : void</td></tr>
+                          <tr><td>+ Get( index : int ) const : T</td></tr>
+                          <tr><td>+ Size() const : int</td></tr>
+                          <tr><td></td></tr>
+                        </tbody></table>
+                        
+                        <br><br>
+                        
+                        <div class="hint-box">
+                            <section class="click-to-expand">Why do you have <code>m_</code> as prefixes?</section>
+                            <section class="hint-contents">
+                              <p>
+                                There are many different coding styles, but in some style guides
+                                they use <code>_</code> or <code>m_</code> to prefix
+                                any <strong>private member variables</strong> that belong to a class.
+                                <br><br>
+                                I like to do this because then with a Setter, I can write this:
+</p><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetItemCount</span><span class="hljs-params">( <span class="hljs-keyword">int</span> itemCount )</span>
+</span>{
+  m_itemCount = itemCount;
+}</code></pre>
+                                
+                                Instead of this:
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetItemCount</span><span class="hljs-params">( <span class="hljs-keyword">int</span> itemCount )</span>
+</span>{
+  <span class="hljs-keyword">this</span>-&gt;itemCount = itemCount;
+}</code></pre>
+                              <p></p>
+                            </section>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <h4>Storage() constructor</h4>
+                  <p>
+                    The default constructor needs to initialize the 
+                    <code>ARRAY_SIZE</code> named constant (which has to be
+                    done via a member initializer list) and the <code>m_itemCount</code> variable.
+                    Since the <code>m_arr</code> array is set to size 20, the <code>ARRAY_SIZE</code>
+                    should also be 20. The <code>m_itemCount</code> should start at 0, since no items
+                    will be stored in the array to begin with.
+                  </p>
+                  
+                    <div class="hint-box">
+                        <section class="click-to-expand">How do I initialize the named constant with a member initializer list??</section>
+                        <section class="hint-contents">
+                          <p>The constructor will look like this (within the class declaration):</p>
+<pre><code class="hljs javascript">Storage()
+  : <span class="hljs-function"><span class="hljs-title">ARRAY_SIZE</span>(<span class="hljs-params"> <span class="hljs-number">20</span> </span>)</span>
+{
+  m_itemCount = <span class="hljs-number">0</span>;
+}
+</code></pre>
+                        </section>
+                    </div>
+                  
+                  <h4>void Add( T newItem )</h4>
+                  
+                  <p>
+                    This function should add a new item to the array, the <code>newItem</code>
+                    passed in as a parameter. You should have an error check first, however,
+                    so that if the array is full, then it should display an error and return early.
+                  </p>
+                  <p>
+                    If the array <em>is not full</em>, then you can add the new item at
+                    the index stored by <code>m_itemCount</code>. Make sure to increment the 
+                    <code>m_itemCount</code> by 1 afterwards.
+                  </p>
+                  
+                
+                  <div class="hint-box">
+                      <section class="click-to-expand">How do I know if the array is full?</section>
+                      <section class="hint-contents">
+                        <p>
+                          The array is full if the <code>m_itemCount</code>, the amount of items
+                          we have stored in the array, is equal to the <code>ARRAY_SIZE</code>,
+                          which is the amount of elements the array <em>can</em> store.
+                        </p>
+                        <pre><code class="hljs javascript"><span class="hljs-keyword">if</span> ( m_itemCount == ARRAY_SIZE ) { <span class="hljs-comment">/* It's full! */</span> }</code></pre>
+                      </section>
+                  </div>
+                  
+                  <div class="hint-box">
+                      <section class="click-to-expand">What index do I add the new item at?</section>
+                      <section class="hint-contents">
+                        <p>
+                          When the array is empty, <code>m_itemCount</code> will be 0.
+                          Adding the first item also goes to the index position 0.
+                          <br><br>
+                          
+                          When there is one item in the array, <code>m_itemCount</code> will be 1.
+                          Adding the second item will go to the position 1.
+                          <br><br>
+                          
+                          Therefore, <code>m_itemCount</code> has two purposes: It stores how
+                          many items we currently have in the array <em>and</em> the same number
+                          is also the <em>index where the next new item will go.</em> So:
+                        </p>
+                        <pre><code class="hljs">m_arr[ m_itemCount ] = newItem;</code></pre>
+                      </section>
+                  </div>
+                  
+                  <div class="hint-box">
+                      <section class="click-to-expand">How do I increment <code>m_itemCount</code>?</section>
+                      <section class="hint-contents">
+                        <p>
+                          You can increment with the <code>++</code> operator or
+                          <code>+=</code> operator or write it out as a full statement.
+                        </p>
+                        <pre><code class="cpp hljs">m_itemCount++;</code></pre>
+                        <pre><code class="cpp hljs">m_itemCount += <span class="hljs-number">1</span>;</code></pre>
+                        <pre><code class="cpp hljs">m_itemCount = m_itemCount + <span class="hljs-number">1</span>;</code></pre>
+                      </section>
+                  </div>
+                  
+                  
+                  <h4>T Get( int index ) const</h4>
+                  <p>
+                    This function will return the element of the <code>m_arr</code> array
+                    at the position <code>index</code>, which is passed in as a parameter.
+                    We are not going to bother with any error checks for this function for now.
+                    Just return the correct element.
+                  </p>
+                  
+                    <div class="hint-box">
+                      <section class="click-to-expand">How do I know what to return?</section>
+                      <section class="hint-contents">
+                        <p>Just return the element of <code>m_arr</code> at the index specified:</p>
+                        <pre><code class="hljs kotlin"><span class="hljs-keyword">return</span> m_arr[index];</code></pre>
+                      </section>
+                    </div>
+                    
+                    
+                    <div class="hint-box">
+                      <section class="click-to-expand">Why aren't we doing an error check here?</section>
+                      <section class="hint-contents">
+                        <p>
+                          Since this function has a return type that isn't void and we don't
+                          know the data type (it's "T"), this means 
+                          we <em>have to return a value</em>. If the user enters an index
+                          that is invalid, we can't just return a default value at this point.
+                          The proper way to deal with an error here is by <em>throwing an exception</em>,
+                          but we will cover that later.
+                        </p>
+                      </section>
+                    </div>
+                  
+                  <h4>int Size() const</h4>
+                  <p>
+                    This function should return the value of <code>m_itemCount</code>.
+                  </p>
+                  
+                  <h4>Back in main()...</h4>
+                  <p>
+                    Back in main(), we're going to create a couple of <code>Storage</code>
+                    objects to store product names (strings) and product prices (floats).
+                  </p>
+                  
+                  <p>They can be declared like this:</p>
+<pre><code class="hljs cpp">Storage&lt;<span class="hljs-built_in">string</span>&gt; productNames;
+Storage&lt;<span class="hljs-keyword">float</span>&gt; productPrices;</code></pre>
+                  
+                  <p>
+                    Now, whatever we put within the &lt; and &gt; is what gets
+                    "filled in" to that "T" data type we were using in the class -
+                    the member array, the parameter for Add, and the return type for Get.
+                  </p>
+                  
+                  <p>
+                    We can add items to each object via the Add function:
+                  </p>
+                  
+<pre><code class="hljs apache"><span class="hljs-attribute">productNames</span>.Add( <span class="hljs-string">"Sketchbook"</span> );
+<span class="hljs-attribute">productPrices</span>.Add( <span class="hljs-number">5</span>.<span class="hljs-number">59</span> );
+</code></pre>
+  
+                  <p>
+                    Add at least a couple more product names and a couple more product prices.
+                  </p>
+                  
+                  <p>
+                    Finally, let's display a list of products' names and prices.
+                    We can use our templated <code>DisplayColumn</code> function
+                    to display a header for our table:
+
+                  </p>
+                  
+                    <div class="row">
+                        <div class="col-md-6">
+<pre><code class="hljs cpp">DisplayColumn( <span class="hljs-string">"NAME"</span> );
+DisplayColumn( <span class="hljs-string">"PRICE"</span> );
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+</code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <pre class="program-output">NAME                PRICE  </pre>
+                        </div>
+                    </div>
+                    
+                    
+                  <p>
+                    Next, we can write a for loop to iterate from <code>i = 0</code>
+                    to the size of one of the arrays (<code>productNames.Size()</code>),
+                    going up by 1 each time. Within the loop, use the <code>DisplayColumn</code>
+                    function to display each name and price:
+                  </p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+<pre><code class="hljs cpp"><span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; productNames.Size(); i++ )
+{
+  DisplayColumn( productNames.Get( i ) );
+  DisplayColumn( productPrices.Get( i ) );
+  <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</code></pre>
+                        </div>
+                        <div class="col-md-6">
+<pre class="program-output">NAME                PRICE               
+Sketchbook          5.59                
+Art pens            12.99               
+Colored pencils     5.99 </pre>
+                        </div>
+                    </div>
+                    
+                    
+                  <p>
+                    Build and test the program to make sure it works properly before continuing.
+                  </p>
+                    
+                  
+                  <div class="error">
+                    <p><strong>I have build errors??</strong></p>
+                    <p>
+                      Look for these common errors:
+                    </p>
+                    <ul>
+                      <li>Did you use <code>#include "functions.hpp"</code> at the top of your source file that has main()?</li>
+                      <li>Don't forget your file guards in header (.h/.hpp) files!</li>
+                      <li>Never #include a .cpp file!</li>
+                    </ul>
+                  </div>
+                  
+                  
+<!--#########--></section><!--################################################################################################-->
+
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="part3" href="#part3"><h3> Your own templated function </h3></a><!--#############-->
+                  <p>
+                    Now you'll use what we've covered so far to create a templated function on your own.
+                    We're actually going to <strong>overload</strong> some functions as well to get
+                    all the outputs we want.
+                  </p>
+                  
+                  <p>
+                    These functions are going to take an <code>ofstream</code> (output file stream)
+                    as well as any additional data and is responsible for outputting it to a text
+                    file, organized in columns.
+                  </p>
+                  
+                  <p>
+                    There will be three versions of the Output function,
+                    but only one will be templated. Let's start with the first one...
+                  </p>
+                  
+                  <h4>void Output( ofstream&amp; output )</h4>
+                  <p>
+                    The first version of this function takes in an output file stream
+                    and is only going to write a new line to the file (with <code>endl</code>), like this:
+                  </p>
+<pre><code class="cpp hljs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Output</span><span class="hljs-params">( ofstream&amp; output )</span>
+</span>{
+    output &lt;&lt; <span class="hljs-built_in">endl</span>;
+}</code></pre>
+                  
+                  <h4>void Output( ofstream&amp; output, string label )</h4>
+                  <p>
+                    The next version of the Output function will take an additional parameter -
+                    a string that will be output to the text file.
+                    The label will be written in a column of width 20, using the
+                    iomanip keywords:
+                  </p>
+<pre><code class="cpp hljs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Output</span><span class="hljs-params">( ofstream&amp; output, <span class="hljs-built_in">string</span> label )</span>
+</span>{
+    output &lt;&lt; left &lt;&lt; setw( <span class="hljs-number">20</span> ) &lt;&lt; label &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</code></pre>
+
+                  <div class="extraneous">
+                    <p><strong>Overloaded functions:</strong>
+                    Two or more functions can have the same name as long as their
+                    <strong>function signatures</strong> are unique. The function signature
+                    is made up of the function name and the parameter list.
+                    <br><br>
+                    In this case, one function has one parameter and the other
+                    has two, so the compiler can easily tell these apart,
+                    which means we can reuse the same function name here.
+                    </p>
+                  </div>
+                  
+                  <h4>void Output( ofstream&amp; output, string label, T data )</h4>
+                  <p>
+                    Finally, you'll implement a <strong>templated function</strong> version of Output,
+                    which takes in both a label and a piece of data - of any data type.
+                    In the output, it should display the label first and then the data,
+                    and both will have columns of width 20 (use <code>setw( 20 )</code>).
+                  </p>
+                  <p>
+                    Finish implementing the function and then we'll use it in main().
+                  </p>
+                  
+                  <h4>main()</h4>
+                  <p>
+                    In main, after the previous examples, we will use the
+                    Output function to display product names and prices to a text file.
+                  </p>
+                  <p>
+                    First, make sure to create an <code>ofstream</code> object and open a
+                    file, such as "output.txt".
+                  </p>
+                  
+                    <div class="hint-box">
+                      <section class="click-to-expand">How do I create an ofstream item and open a text file?</section>
+                      <section class="hint-contents">
+                        <p>If you need to review, you can look at the <a href="https://gitlab.com/RachelWilShaSingh/Rachels-Computer-Science-Notes/-/blob/master/LaTeX/Core%20Programming%20Concepts/standalone-chapter8-file_input_and_output.pdf">textbook</a> or watch the <a href="http://lectures.moosader.com/cs200/14-File-IO.mp4">video lecture</a>.</p>
+                        <pre><code class="hljs cpp"><span class="hljs-function">ofstream <span class="hljs-title">outfile</span><span class="hljs-params">( <span class="hljs-string">"output.txt"</span> )</span></span>; <span class="hljs-comment">// will generate in same location as your project file</span></code></pre>
+                      </section>
+                    </div>
+                    
+                  <p>
+                    After creating the ofstream variable (I've named mine <code>outfile</code>), use the Output functions
+                    to display the following:
+                  </p>
+                  
+                  <ol>
+                    <li>Display the text "First product" with the two-parameter version of Output.</li>
+                    <li>Display the label "Name:" and the 0th element from <code>productName</code> as the data with the three-parameter version of Output.</li>
+                    <li>Display the label "Price:" and the 0th element from <code>productPrices</code> as the data with the three-parameter version of Output.</li>
+                    <li>Call the one-parameter version of Output to add an extra new line to the text file.</li>
+                    <li>Display the text "Second product" with the two-parameter version of Output.</li>
+                    <li>Display the label "Name:" and the 1st element from <code>productName</code> as the data with the three-parameter version of Output.</li>
+                    <li>Display the label "Price:" and the 1st element from <code>productPrices</code> as the data with the three-parameter version of Output.</li>
+                  </ol>
+                  
+                  
+                    <div class="hint-box">
+                      <section class="click-to-expand">How do I get the 0th element and 1st element from the lists?</section>
+                      <section class="hint-contents">
+                        <p>
+                          Refer back to the earlier code where you use a
+ for loop to display each of the names and prices to the screen... 
+                        </p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">DisplayColumn</span>( <span class="hljs-selector-tag">productNames</span><span class="hljs-selector-class">.Get</span>( <span class="hljs-selector-tag">i</span> ) );
+<span class="hljs-selector-tag">DisplayColumn</span>( <span class="hljs-selector-tag">productPrices</span><span class="hljs-selector-class">.Get</span>( <span class="hljs-selector-tag">i</span> ) );
+</code></pre>
+                        <p>
+                          But in this case, you don't want element <code>i</code>, you want the 0th and 1st indices.
+                        </p>
+                      </section>
+                    </div>
+                  
+                    
+                    <div class="row">
+                        <div class="col-md-7">
+                          <p>
+                            The text file will be generated in the same directory as your project file,
+                            so after you run the program make sure to open that directory and look for the text file.
+                          </p>
+                          <p>
+                            The text file output should look something like this:
+                          </p>
+                          
+<pre class="text-output">First product       
+Name:               Sketchbook          
+Price:              5.59                
+
+Second product      
+Name:               Art pens            
+Price:              12.99               
+</pre>
+                        </div>
+                        <div class="col-md-5 fit-image">
+                          <img src="[u03eA]%20%F0%9F%8F%8B%EF%B8%8F%20Templates%20(CS%20250%20Basic%20Data%20Structures%20with%20C++)_files/fileoutput.png">
+                          <p class="center"><sub>A screenshot of the filesystem, showing the output.txt file in the same location as my Code::Blocks project files</sub></p>
+                        </div>
+                    </div>
+                  
+                  <div class="error">
+                    <p><strong>I have build errors??</strong></p>
+                    <p>
+                      Look for these common errors:
+                    </p>
+                    <ul>
+                      <li>Make sure to #include iostream, string, and iomanip in the functions.hpp file.</li>
+                      <li>Did you remember the <code>template &lt;typename T&gt; above your templated function?</code></li>
+                    </ul>
+                  </div>
+                  
+<!--#########--></section><!--################################################################################################-->
+
+                    <!--
+                    <table class="table">
+                        <tr><th>Test</th>   <th>Inputs</th>                                 <th>Output                  </th></tr>
+                        <tr><td>1.</td>     <td>                                    </td>   <td>                        </td></tr>
+                    </table>
+                    
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-12"><hr class="little"></div>
+                    </div>
+                    
+                    <div class="hint-box">
+                      <section class="click-to-expand">(Click to open hint)</section>
+                      <section class="hint-contents">
+                        <pre><code>asdf</code></pre>
+                      </section>
+                    </div>
+                    -->
+                    
+<!--##########################################################################################################################-->
+<!--#########--><section><hr><a name="partZ" href="#partZ"><h3> Submitting your work </h3></a><!--############################-->
+                    <ol>
+                        <li>Add, Commit, and Push the rest of your work.
+                        </li>
+                        <li>On GitLab, click on the latest commit. Copy the URL of the commit.</li>
+                        <li>On Canvas, locate the corresponding assignment.</li>
+                        <li>Submit the commit URL as the submission for this assignment.</li>
+                    </ol>
+
+<!--#########--></section><!--################################################################################################-->
+
+            </div><!-- row exercise -->
+            <!-- ## END EXERCISE CONTENT ######################################################################### -->
+        </div> <!-- container-fluid exercise -->
+    </div> <!-- container-fluid -->
+    <hr>
+
+</body></html>

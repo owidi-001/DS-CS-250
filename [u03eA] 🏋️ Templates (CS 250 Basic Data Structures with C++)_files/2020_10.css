@@ -1,0 +1,376 @@
+.video-embed {
+  clear: both;
+  background: #c1edff;
+  border: solid 1px #81daff;
+  padding: 5px;
+  width: 100%;
+  min-width: 620px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.video-embed h4 {
+  width: 100%;
+}
+
+.video-embed video {
+  width: 600px;
+  height: 338px;
+  margin: 0 auto;
+}
+
+.video-embed iframe {
+  width: 600px;
+  height: 338px;
+  margin: 0 auto;
+}
+
+blockquote {
+  margin-left: 10px;
+  padding: 10px;
+  border: dashed 2px #aaa;
+  background: #eee;
+}
+
+.otherstuff .card {
+  margin: 5px;
+}
+
+
+.assignment-info .canvas-links {
+  clear: both;
+}
+
+.assignment-info .due-dates {
+  margin-bottom: 20px;
+}
+
+.assignment-info #insert-duedate {
+  margin-right: 50px;
+}
+
+.assignment-info .canvas-links ul li {
+  float: left;
+  margin-right: 35px;
+}
+
+.assignment-info .canvas-links ul {
+}
+
+.quick-nav ul
+{
+    list-style-type: none;
+    text-align: right;
+    display: inline;
+}
+
+#weekly-schedule td.notes {
+    font-size: 0.8em;
+}
+
+#weekly-schedule ul li {
+    list-style-type: none;
+}
+
+#weekly-schedule ul {
+    padding-left: 0;
+}
+
+hr.little, hr.small {
+    width: 75%;
+    background: #e5c5ff;
+}
+
+.exercise section { width: 100%; }
+
+.exercises .name,
+.quizzes .name { font-size: 11pt; }
+
+section.reminders { font-size: 11pt;  }
+section.reminders ul { padding-left: 0; }
+section.reminders ul li { background: #ffffaa; padding: 5px; list-style-type: none; }
+
+section.by-unit table {
+    font-size: 11pt;
+}
+
+.by-unit table ul li { margin-bottom: 15px; }
+.by-unit table ul ul li { margin-bottom: 0; }
+
+.syllabus-icon img,
+.col-sm-1 img,
+.fit-image img { width: 100%; }
+
+table.section-info th { padding-right: 10px; }
+
+.header-information {
+    font-size: 0.8em;
+}
+
+.header-information #nav-box ul li {
+    font-size: 12pt;
+}
+
+.do { background: #D8FFD2; }
+.dont { background: #FFD2D7; }
+.maybe { background: #FFEC85; }
+
+.course-description-stuff { font-size: 10pt; }
+.course-description-stuff p { margin-top: 0 !important; margin-bottom: 0 !important; }
+.course-description-stuff h3 { font-size: 10pt; font-weight: bold; margin-top: 10px; }
+
+.changing-field { background: #D2EDFF; }
+
+.pronouns { font-size: 0.9em; }
+
+.invisible { display: none; }
+
+.uml { border: solid 1px #000; font-family: monospace; background: #FEFFE0; width: 100%; }
+table.uml tr td,
+table.uml tr th { padding: 5px; }
+
+table.uml tr th { text-align: center; }
+
+table.function-spec,
+table.function-spec tr th,
+table.function-spec tr td {
+  border: solid 1px #006e85;
+}
+
+table.function-spec tr th {
+  width: 50%;
+}
+
+table.function-spec,
+table.function-spec tr th {
+  background: #c4f5ff;
+  padding: 5px;
+}
+
+table.function-spec,
+table.function-spec tr td {
+  background: #fff;
+}
+
+
+ol li ol {
+  list-style-type: lower-alpha;
+}
+
+
+.info-box {
+    background: #fff;
+}
+
+.bg1 .info-box-header { background: #ffbdbd; }
+.bg2 .info-box-header { background: #c5ffbd; }
+
+.info-box-header { color: #000; }
+
+.info-box-body {
+    background: #fff;
+}
+
+table.insert-here {
+    width: 100%;
+    border: solid 1px #666;
+    border-collapse: collapse;
+}
+
+table.insert-here th {
+    font-size: 11pt;
+}
+
+table.insert-here tr {
+    border: solid 1px #81daff;
+    border-collapse: collapse;
+    
+}
+
+table.insert-here tr th,
+table.insert-here tr td { 
+    vertical-align: top;
+    padding: 5px; 
+} 
+table.insert-here .docs.key         { width: 10%; }
+table.insert-here .docs.name        { width: 30%; }
+table.insert-here .docs.documents   { width: 30%; }
+table.insert-here .docs.canvas      { width: 30%; }
+
+table.insert-here .nodocs.key         { width: 10%; }
+table.insert-here .nodocs.name        { width: 60%; }
+table.insert-here .nodocs.documents   { width: 0%; }
+table.insert-here .nodocs.canvas      { width: 30%; }
+
+table.insert-here tr:nth-child(even)    { background: #c1edff; }
+table.insert-here tr:nth-child(odd)     { background: #def6ff; }
+
+table.insert-here .due,
+table.insert-here .end { font-size: 9pt; color: #295f75; }
+
+
+.math {
+    font-size: 1.2em;
+    font-family: serif;
+    font-style: italic;
+}
+
+pre.program-output {
+    background: #3A3A3A;
+    color: #ffffff;
+    padding: 5px;
+    border: outset 5px #aaa;
+}
+
+pre.text-output {
+    border: outset 5px #aaa;
+    padding: 5px;
+}
+
+.build-and-run {
+    text-align: center;
+    border: solid 5px #ADA536;
+    background: #FFFCCB;
+    padding: 5px;
+    margin: 10px;
+}
+
+.hint-box {
+    margin-bottom: 20px;
+}
+
+.hint {
+    text-align: center;
+    border: solid 5px #2C701A;
+    background: #D7FFCB;
+    padding: 5px;
+    margin: 10px;
+}
+
+.hint-contents {
+    background: #ebffe5;
+    padding: 10px;
+    border-left: solid 1px #2C701A;
+    border-right: solid 1px #2C701A;
+    border-bottom: solid 1px #2C701A;
+}
+
+.hint-contents pre {
+    border: solid 1px #2C701A;
+}
+
+.extraneous {
+    border: solid 5px #3676AD;
+    background: #CBE7FF;
+    padding: 5px;
+    margin: 10px;
+}
+
+.protip {
+    border: solid 5px #AD9424;
+    background: #FFF387;
+    padding: 5px;
+    margin: 10px;
+}
+
+.error {
+    border: solid 5px #ad3636;
+    background: #faf9d0;
+    padding: 5px;
+    margin: 10px;
+}
+
+.exercise h3 {
+    background: #8C50CB;
+    color: #fff;
+    padding: 5px;
+}
+
+.exercise h3 a {
+    color: #fff;
+}
+
+.exercise h4 {
+    background: #E2DEE6;
+    padding: 5px;
+    margin-top: 100px;
+}
+
+.exercise h5 {
+    margin-top: 50px;
+}
+
+.hint-box
+{
+}
+
+.hint-box .click-to-expand
+{
+    background: #D7FFCB;
+    padding: 2px;
+    cursor: pointer;
+    border: solid 1px #2C701A;
+}
+
+.hint-box .hint-contents 
+{
+    display: none;
+}
+
+.center
+{
+    text-align: center;
+}
+
+
+.word-balloon
+{
+    border: solid 2px #000;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 14pt;
+}
+
+
+
+@media print{
+
+}
+
+
+/** https://codepen.io/liuzenan/pen/nCJpo
+ * */
+
+.shimmer {
+  display: inline-block;
+  color:white;
+  
+  background: #5d4000 -webkit-gradient(linear, 100% 0, 0 0, from(#ffb100), color-stop(0.5, #ffb100), to(#a06f00));
+  
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%; /*50px*/
+  
+  text-shadow: 0 0 3px #ffd474, 0 0 5px #ffd474;
+  font-weight: bold;
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -4rem top; /*50px*/
+    }
+
+    70% {
+        background-position: 12.5rem top; /*200px*/
+    }
+
+    100% {
+        background-position: 12.5rem top; /*200px*/
+    }
+}
